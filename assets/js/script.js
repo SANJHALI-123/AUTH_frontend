@@ -40,7 +40,8 @@ function showMessage(message, isSuccess) {
           showMessage('Signup successful! Redirecting to login...', true);
           // Automatic redirect after 1.5 seconds with email parameter
           setTimeout(() => {
-            window.location.href = `login.html?email=${encodeURIComponent(email)}`;
+           window.location.href = `https://auth-frontend-self.vercel.app/login.html?email=${encodeURIComponent(email)}`;
+
           }, 1500);
         } else {
           showMessage(data.message || 'Signup failed', false);
