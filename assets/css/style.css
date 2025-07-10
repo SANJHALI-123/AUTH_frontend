@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .auth-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+                0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 400px;
+    max-width: 100%;
+    min-height: 400px;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .auth-form h1 {
+    font-weight: bold;
+    margin: 0 0 20px;
+    color: #333;
+  }
+  
+  .auth-form span {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .auth-form input {
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+  
+  .auth-form input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 75, 43, 0.5);
+    transform: scale(1.02);
+  }
+  
+  .auth-form button {
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background: #ff4b2b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 20px 0;
+  }
+  
+  .auth-form button:hover {
+    background: #ff5e3a;
+  }
+  
+  .auth-form button:active {
+    transform: scale(0.95);
+  }
+  
+  .auth-form button:disabled {
+    background: #cccccc;
+    border-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .social-container {
+    margin: 20px 0;
+  }
+  
+  .social-container a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #333;
+    transition: all 0.3s;
+  }
+  
+  .social-container a:hover {
+    background: #ff4b2b;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  
+  .forgot-password {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: #ff4b2b;
+  }
+  
+  .auth-switch {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .auth-switch a {
+    color: #ff4b2b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .auth-switch a:hover {
+    text-decoration: underline;
+  }
+  
+  .message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+  }
+  
+  .message.show {
+    opacity: 1;
+    transform: translate(-50%, 10px);
+  }
+  
+  .message.success {
+    background: rgba(46, 204, 113, 0.9);
+  }
+  
+  .message.error {
+    background: rgba(231, 76, 60, 0.9);
+  }
+  
+  /* Loading spinner */
+  .fa-spinner {
+    margin-right: 8px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .fa-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @media (max-width: 768px) {
+    .auth-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
